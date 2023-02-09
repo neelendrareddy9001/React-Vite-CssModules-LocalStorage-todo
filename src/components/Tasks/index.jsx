@@ -2,24 +2,27 @@ import styles from './tasks.module.css'
 import {Task} from '../Task'
 
 
-export function Tasks ({tasks}) {
+export function Tasks ({tasks, onComplete}) {
+    const taskQunatity = task.length;
+    const completedTask = task.filter(tasks => tasks.isCompleted).length;
+    
     return (
         <section className={styles.tasks}>
             <header className={styles.header}>
                 <div>
                     <p>Create tasks</p>
-                    <span>10</span>
+                    <span>{taskQunatity}</span>
                 </div>
 
                 <div>
                     <p className={styles.textPurple}>Completed tasks</p>
-                    <span>1 of 10</span>
+                    <span>{completedTask} of {taskQunatity}</span>
                 </div>
             </header>
 
             <div className={styles.list}>
                 {tasks.map(task => (
-                    <Task key={task.id} task={task}/>
+                    <Task key={task.id} task={task} onComplete={onComplete}/>
                 ))}
             </div>
         </section>
