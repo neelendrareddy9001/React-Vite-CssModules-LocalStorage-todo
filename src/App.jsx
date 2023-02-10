@@ -5,6 +5,20 @@ import {useState} from 'react'
 
 function App() {
   const [task, setTask] = useState([]);
+  
+  function LocalSavedTasks ()  {
+    const saved = localStorage.getItem(local_storage_key);
+    if(saved) {
+      setTask(JSON.parse(saved));
+    }
+  }
+  
+  useEffect(() => {
+    LocalSavedTasks();
+  },[])
+  
+  
+  
   function addTask (taskTitle) {
     setTask ([
       ...task,
