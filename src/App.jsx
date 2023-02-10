@@ -18,6 +18,9 @@ function App() {
   },[])
   
   
+  function setTasksAndSave(newTasks) {
+    localStorage.setItem(local_storage_key, JSON.stringify(newTasks));
+  }
   
   function addTask (taskTitle) {
     setTask ([
