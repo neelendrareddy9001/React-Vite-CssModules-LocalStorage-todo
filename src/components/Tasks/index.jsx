@@ -2,7 +2,7 @@ import styles from './tasks.module.css'
 import {Task} from '../Task'
 
 
-export function Tasks ({tasks, onComplete}) {
+export function Tasks ({tasks, onComplete,onDelete}) {
     const taskQunatity = task.length;
     const completedTask = task.filter(tasks => tasks.isCompleted).length;
     
