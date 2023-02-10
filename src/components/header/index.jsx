@@ -4,7 +4,7 @@ import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useState } from 'react';
 
 export function Header () {
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState({onAddTask});
     
     function handleSubmit (event)  {
         event.preventDefault();
